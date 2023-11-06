@@ -1,0 +1,48 @@
+<div class="cart">
+    <app-navbar [title]="title"></app-navbar>
+
+    <mat-card>
+        <table *ngIf="cartProducts.length!=0" #table>
+            <tr class="table-head">
+                <td>S.No</td>
+                <td>Name</td>
+                <td>Price</td>
+                <td></td>
+            </tr>
+
+            <tr *ngFor="let element of cartProducts; let i =index">
+
+                <td class="cart-text">{{i+1}}</td>
+
+                <td class="cart-content">
+                    <img src={{element.src}} class="cart-img">
+                    <span class="cart-name">{{element.name}}</span>
+                </td>
+
+                <td class="cart-text">{{element.price | currency:"INR"}}</td>
+
+                <td>
+                    <button mat-fab class="delete warn" (click)="deleteItem(element)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+
+            </tr>
+        </table>
+
+        <div class="empty-cart" *ngIf="cartProducts.length==0">
+            <div>
+                <img src="../../../assets/emptycart.png" width="270px">
+                <h1>Your Shopping Cart is empty!</h1>
+                <h3>Add some books <a routerLink="/products">Shop Now</a></h3>
+            </div>
+        </div>
+
+    </mat-card>
+
+    <div class="actions" *ngIf="cartProducts.length!=0">
+        <h1 class="total">Grand Total: {{grandTotal | currency:"INR"}}</h1>
+        <button mat-raised-button (click)="emptyCart()" class="warn">Empty Cart</button>
+        <button mat-raised-button routerLink="/payment" class="checkout">Checkout</button>
+    </div>
+</div>

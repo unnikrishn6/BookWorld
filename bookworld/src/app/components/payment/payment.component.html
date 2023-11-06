@@ -1,0 +1,70 @@
+<div class="payment">
+    <app-navbar [title]="title"></app-navbar>
+
+    <div class="pay-details">
+        <mat-card class="card">
+            <mat-card-title>
+                Payment Details
+            </mat-card-title>
+
+            <form [formGroup]="billForm">
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput name="name" formControlName="name">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Phone</mat-label>
+                    <input matInput name="phone" maxlength="10" formControlName="phone"
+                        (keypress)="numericOnly($event)">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Country</mat-label>
+                    <input matInput name="country" formControlName="country" readonly>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder='{{grandTotal | currency:"INR"}}' readonly>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Select Payment Option</mat-label>
+                    <mat-select>
+                        <mat-option value="card" formControlName="card" ngDefaultControl>
+                            Card
+                        </mat-option>
+                        <mat-option value="upi" formControlName="upi" ngDefaultControl>
+                            UPI
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Account Number/ID</mat-label>
+                    <input matInput name="id" formControlName="id">
+                </mat-form-field>
+
+                <button mat-raised-button class="btn" [disabled]="!billForm.valid" (click)="pay(myDialog)">
+                    Pay {{grandTotal | currency:"INR"}}
+                </button>
+
+            </form>
+        </mat-card>
+
+        <ng-template #myDialog>
+            <h1 class="title" matDialogTitle>Thank You!</h1>
+            <mat-dialog-content>
+                <p>Your order is placed successfully!</p>
+            </mat-dialog-content>
+            <mat-dialog-actions>
+                <button mat-raised-button matDialogClose routerLink="/details">OK</button>
+            </mat-dialog-actions>
+        </ng-template>
+
+        <div class="image">
+            <img src="../../../assets/payment.png" width="700px">
+        </div>
+    </div>
+   
+</div>

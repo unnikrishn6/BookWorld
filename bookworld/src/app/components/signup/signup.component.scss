@@ -1,0 +1,13 @@
+@import '../login/login.component.scss';
+
+#card{
+    margin-bottom: 2.5%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .signup {
+        display: block;
+        padding-top: 70px;
+    }
+
+}

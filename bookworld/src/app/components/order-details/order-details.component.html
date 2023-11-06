@@ -1,0 +1,44 @@
+<div class="details-page">
+    <app-navbar [title]="title"></app-navbar>
+    <div class="top">
+        <h1>Thank you for your order!</h1>
+        <img src="../../../assets/tick.png">
+    </div>
+    <div class="cards">
+        <mat-card *ngFor="let index of details" class="card1">
+            <mat-card-title>User details</mat-card-title>
+
+            <div class="details">
+                <div class="content">
+                    <h3>Name :</h3>
+                    <h3>{{index.name}}</h3>
+                </div>
+
+                <div class="content">
+                    <h3>Phone :</h3>
+                    <h3>{{index.phone}}</h3>
+                </div>
+
+                <div class="content">
+                    <h3>Total Amount :</h3>
+                    <h3>{{index.grandTotal | currency:"INR" }}</h3>
+                </div>
+
+                <div class="content">
+                    <h3>Mode of payment :</h3>
+                    <h3>Card/UPI Payment</h3>
+                </div>
+            </div>
+
+        </mat-card>
+        <mat-card class="card2">
+            <mat-card-title>Product details</mat-card-title>
+            
+            <div class="content" *ngFor="let index of cartProducts">
+                <img src="{{index.src}}" alt="" class="img">
+                <h3 class="book-name">{{index.name}}</h3>
+            </div>
+        </mat-card>
+    </div>
+
+</div>

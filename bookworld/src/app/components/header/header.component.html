@@ -1,0 +1,20 @@
+<mat-toolbar class="nav">
+    <img src="../../../assets/bookworld.png" alt="logo" width="48px">
+    <span><a routerLink="/">BookWorld</a></span>
+
+    <div class="link">
+        <span *ngIf="!showLogin()">
+            <span class="nav-link"><a routerLink="/products" routerLinkActive="active">Books</a></span>
+            <span class="nav-link about"><a routerLink="/request" routerLinkActive="active">Request a book</a></span>
+            <span class="nav-link">{{userName | titlecase}}</span>
+            <span class="nav-link"><a routerLink="/cart" routerLinkActive="active">My cart</a></span>
+            <span class="nav-link"><a routerLink="/login" (click)="logOut()">Log out</a></span>
+        </span>
+
+        <div *ngIf="showLogin();">
+            <span class="nav-link"><a routerLink="/login" routerLinkActive="active">Login</a></span>
+            <span class="nav-link"><a routerLink="/signup" routerLinkActive="active">Sign up</a></span>
+        </div>
+
+    </div>
+</mat-toolbar>

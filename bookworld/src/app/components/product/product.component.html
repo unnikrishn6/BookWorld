@@ -1,0 +1,23 @@
+<div class="products">
+    <app-navbar [title]="title"></app-navbar>
+
+    <div class="book-list">
+        <mat-card class="card" *ngFor="let index of bookList">
+            <img mat-card-image class="card-img" routerLink="/product-page/{{index._id}}" src={{index.src}} alt="Photo">
+
+            <mat-card-content class="card-content">
+                <h4>{{index.name}}</h4>
+            </mat-card-content>
+
+            <mat-card-actions>
+
+                <span class="price">{{index.price | currency:"INR"}}</span>
+                <button mat-raised-button class="view-btn" routerLink="/product-page/{{index._id}}" appearance="legacy">
+                    View
+                </button>
+
+            </mat-card-actions>
+
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,97 @@
+.page {
+    padding-top: 69px;
+    z-index: 1;
+}
+
+.details {
+    display: flex;
+    margin-left:4%;
+}
+
+.price {
+    font-size: 26px;
+    padding-top:10px;
+    color: #d40000;
+}
+
+.image {
+    margin-left:5%;
+    img {
+        width: auto;
+        max-height: 470px;
+        margin: 45px;
+    }
+}
+
+.content {
+    margin-left: 5%;
+    margin-top: 62px;
+    margin-right: 2%;
+
+    h1 {
+        margin: 0;
+    }
+}
+
+.add-cart {
+    margin-top: 10px;
+    height: 45px;
+    width: 30%;
+}
+
+.description {
+    margin-top: 25px;
+    h1{
+        font-size: 22px;
+    }
+    p {
+        width: 600px;
+        margin-top: 8px;
+    }
+}
+
+.shipping {
+    padding-top: 10px;
+
+    p {
+        margin: 0;
+    }
+}
+
+.title {
+    font-size: 25px !important;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+mat-dialog-content p {
+    font-size: 15px !important;
+    margin: 0px !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+button {
+    background-color: #008ae6 !important;
+    color: white !important;
+}
+
+mat-dialog-actions {
+    justify-content: right;
+    margin: 15px;
+    margin-top: 0px;
+}
+
+@media screen and (max-width:950px) {
+    .details {
+        display: block;
+        margin-bottom: 20%;
+    }
+
+    .content {
+        margin: 0px 30px;
+
+        .description p {
+            width: 100%;
+        }
+    }
+}

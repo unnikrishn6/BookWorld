@@ -1,0 +1,55 @@
+<div class="content">
+    <mat-card id="card">
+        <mat-card-title>Create your Account</mat-card-title>
+
+        <form [formGroup]="signForm" (ngSubmit)="submitForm()">
+            <mat-form-field class="user" appearance="outline">
+                <mat-label>Username</mat-label>
+                <input matInput name="name" formControlName="name">
+            </mat-form-field>
+
+            <div class="alert" *ngIf="signForm.controls.name.invalid && signForm.controls.name.dirty">
+                <div *ngIf="signForm.controls.name.errors?.['required']">
+                    Name is required.
+                </div>
+                <div *ngIf="signForm.controls.name.errors?.['minlength']">
+                    Name must be at least 5 characters long.
+                </div>
+            </div>
+
+            <mat-form-field class="pass" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput name="pass" formControlName="pass">
+            </mat-form-field>
+
+            <div class="alert" *ngIf="signForm.controls.pass.invalid && signForm.controls.pass.dirty">
+                <div *ngIf="signForm.controls.pass.errors?.['required']">
+                    Password is required.
+                </div>
+                <div *ngIf="signForm.controls.pass.errors?.['minlength']">
+                    Password must be at least 5 characters long.
+                </div>
+            </div>
+
+            <mat-form-field class="pass" appearance="outline">
+                <mat-label>Confirm Password</mat-label>
+                <input type="password" matInput name="repass" formControlName="repass">
+            </mat-form-field>
+
+            <div class="alert" *ngIf="signForm.controls.repass.dirty">
+                <div *ngIf="signForm.controls.pass.value!==signForm.controls.repass.value">
+                    Password and Confirm password must be same!
+                </div>
+            </div>
+
+            <button mat-raised-button id="btn"
+                [disabled]="!signForm.valid && (signForm.controls.pass.value!==signForm.controls.repass.value)"
+                type="submit" color="primary">Sign up
+            </button>
+        </form>
+    </mat-card>
+
+    <div class="image">
+        <img src="../../../assets/signup.png" width="600px">
+    </div>
+</div>

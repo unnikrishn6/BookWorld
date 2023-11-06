@@ -1,0 +1,46 @@
+<div class="page">
+    <app-navbar [title]="title"></app-navbar>
+
+    <div class="details" *ngFor="let data of productData">
+        <div class="image">
+            <img src={{data.src}} alt="book-image">
+        </div>
+
+        <div class="content">
+            <h1>{{data.name}}</h1>
+
+            <h1 class="price">{{data.price | currency:'INR'}}</h1>
+            <p>Price inclusive of all taxes</p>
+
+            <button mat-raised-button (click)="addtoCart(data,myDialog)" class="add-cart"
+                appearance="legacy">
+                Add to Cart
+            </button>
+
+            <div class="shipping">
+                <p>Ships within 5-6 Business Days</p>
+                <p>Free Shipping in India</p>
+            </div>
+
+            <div class="description">
+                <h1>Description</h1>
+                <p>{{data.description}}</p>
+            </div>
+
+            <ng-template #myDialog>
+                <h1 class="title" matDialogTitle>Thank You!</h1>
+                <mat-dialog-content>
+                    <p>Product added to the cart.</p>
+                    <p>Only one quantity can be added per order.</p>
+                </mat-dialog-content>
+                <mat-dialog-actions>
+                    <button mat-raised-button matDialogClose>OK</button>
+                    <button mat-raised-button matDialogClose routerLink="/products">
+                        Continue shopping
+                    </button>
+                </mat-dialog-actions>
+            </ng-template>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="request">
+    <app-navbar [title]="title"></app-navbar>
+
+    <div class="content">
+        <section>
+            <h1 class="heading">Welcome to BookWorld</h1>
+            <div>
+                <h1>About us</h1>
+                <ul>
+                    <li>Our website is designed with you in mind. It's user-friendly, easy to navigate, and built for
+                        your convenience.</li>
+                    <li>Explore book summaries, and find your next favorite read effortlessly.</li>
+                    <li>Built using MEAN stack (MongoDB, Express, Angular, Node.js), we provide a seamless and secure
+                        online shopping experience.</li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <h1>Request a Book</h1>
+
+                <h3>
+                    If the book that you wish to buy is not available on our online catalogue, fill in the details
+                    (Title, Author and/or Publisher) on the book request form
+                </h3>
+
+                <form #form="ngForm">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Request a book</mat-label>
+                        <input matInput name="book" [(ngModel)]="book">
+                    </mat-form-field>
+
+                    <button mat-raised-button class="submit-btn" (click)="request(myDialog)" type="submit">
+                        Submit
+                    </button>
+
+                    <ng-template #myDialog>
+                        <h1 class="title" matDialogTitle>Thank You!</h1>
+                        <mat-dialog-content>
+                            <p>We have received your book request for {{book}}</p>
+                        </mat-dialog-content>
+                        <mat-dialog-actions>
+                            <button mat-raised-button matDialogClose>OK</button>
+                        </mat-dialog-actions>
+                    </ng-template>
+
+                </form>
+            </div>
+
+        </section>
+        <img src="../../../assets/request.gif">
+
+    </div>
+</div>

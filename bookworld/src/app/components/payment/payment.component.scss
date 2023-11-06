@@ -1,0 +1,80 @@
+.payment {
+    padding-top: 69px;
+    z-index: 1;
+}
+
+.card {
+    max-width: 420px;
+    height: 100%;
+    padding: 30px;
+    margin-left: 10%;
+    margin-top: 2%;
+    margin-right: 10%;
+    width: 100%;
+    box-shadow: 0px 1px 5px rgb(203, 202, 202);
+}
+
+mat-card-title {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 24px;
+}
+
+mat-form-field input::placeholder {
+    opacity: 1 !important;
+    font-size: 20px;
+    color: #e40000 !important;
+}
+
+button {
+    display: flex;
+    margin-left: auto;
+    font-size: 16px;
+    background-color: #008ae6 !important;
+    color: white !important;
+}
+
+button:disabled {
+    background-color: #47aef4 !important;
+    color: white;
+}
+
+.pay-details {
+    margin: 2%;
+    display: flex;
+}
+
+mat-form-field {
+    display: flex;
+}
+
+.title {
+    font-size: 25px !important;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+mat-dialog-content p {
+    font-size: 15px !important;
+    margin: 0px !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+.image{
+    margin-top: 9%;
+}
+
+@media only screen and (max-width: 1060px) {
+    .card {
+        max-width: 330px;
+        margin-left: 18%;
+        padding: 25px;
+    }
+    .pay-details{
+        display: block;
+    }
+    .image img{
+        width: 90%;
+        margin-left: 20px;
+    }
+}

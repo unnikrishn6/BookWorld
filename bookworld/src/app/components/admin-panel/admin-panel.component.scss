@@ -1,0 +1,109 @@
+@import "../product/product.component.scss";
+
+.admin {
+    padding-top: 69px;
+    z-index: 1;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    margin-left: auto;
+    bottom: 12px;
+}
+
+mat-card {
+    box-shadow: 0px 1px 10px rgb(178, 176, 176);
+    margin: 2%;
+    margin-top: 40px;
+}
+
+.toggle-btn {
+    display: flex;
+    justify-content: center;
+
+    button {
+        width: 40%;
+        height: 45px;
+        margin: 2%;
+        background-color: #008ae6 !important;
+        color: white !important;
+    }
+}
+
+.top-card {
+    width: 360px;
+    padding: 12px;
+}
+
+.add-book {
+    display: flex;
+    justify-content: center;
+
+    .add-card {
+        width: 500px;
+        padding: 30px;
+    }
+}
+
+.count {
+    font-size: 20px;
+    color: red;
+    bottom: 10px;
+    position: absolute;
+}
+
+mat-card-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+mat-form-field {
+    margin-left: 10px;
+    width: 90%;
+}
+
+.btn {
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 50px;
+    height: 45px;
+    width: 90%;
+    background-color: #008ae6 !important;
+    color: white !important;
+}
+
+@media screen and (max-width:1200px) {
+    .top-card {
+        width: 350px;
+        padding: 10px;
+    }
+
+    mat-card-header {
+        font-size: 21px;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .dashboard {
+        display: block;
+        margin-left: 10%;
+    }
+
+    mat-card-header {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .icon {
+        display: none;
+    }
+
+}

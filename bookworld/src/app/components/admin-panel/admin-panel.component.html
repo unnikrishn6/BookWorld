@@ -1,0 +1,83 @@
+<div class="admin">
+    <app-navbar [title]="title"></app-navbar>
+
+    <div class="dashboard">
+        <mat-card class="top-card">
+            <mat-card-header>
+                Number of Books
+                <img class="icon" mat-card-sm-image src="../../../assets/bookshelf.png">
+            </mat-card-header>
+
+            <mat-card-content class="count">
+                {{length}}
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card class="top-card">
+            <mat-card-header>
+                Number of Orders
+                <img class="icon" mat-card-sm-image src="../../../assets/orders.png">
+            </mat-card-header>
+
+            <mat-card-content class="count">
+                {{orders}}
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+
+    <div class="toggle-btn">
+        <button mat-raised-button (click)="showAdd()">Add Book <span>{{boo?"(Hide)":"(Show)"}}</span></button>
+        <button mat-raised-button (click)="showDel()">Delete Book <span>{{foo?"(Hide)":"(Show)"}}</span></button>    
+    </div>
+    
+
+    <div *ngIf="boo" class="add-book">
+        <mat-card class="add-card">
+            <mat-card-title>Add a Book</mat-card-title>
+
+            <form (submit)="addBook()">
+                <mat-form-field id="user" appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput name="name" [(ngModel)]="name">
+                </mat-form-field>
+
+                <mat-form-field id="src" appearance="outline">
+                    <mat-label>Image Source (String)</mat-label>
+                    <input matInput name="src" [(ngModel)]="src">
+                </mat-form-field>
+
+                <mat-form-field id="amt" appearance="outline">
+                    <mat-label>Price</mat-label>
+                    <input matInput name="price" [(ngModel)]="price">
+                </mat-form-field>
+
+                <mat-form-field id="des" appearance="outline">
+                    <mat-label>Description</mat-label>
+                    <input matInput name="Description" [(ngModel)]="description">
+                </mat-form-field>
+
+                <button mat-raised-button class="btn" type="submit">Submit</button>
+            </form>
+        </mat-card>
+    </div>
+
+    <div class="prod" *ngIf="foo">
+        <mat-card class="card" *ngFor="let index of bookList">
+            <img mat-card-image class="card-img" src={{index.src}} alt="Photo">
+
+            <mat-card-content class="card-content">
+                <h4>{{index.name}}</h4>
+            </mat-card-content>
+
+            <mat-card-actions>
+                <span class="price">{{index.price | currency:"INR"}}</span>
+                <button mat-raised-button (click)="deleteBook(index._id)" color="primary" class="view-btn"
+                    appearance="legacy">
+                    Delete
+                </button>
+            </mat-card-actions>
+
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+.nav {
+    height: 69px;
+    background-color: white;
+    box-shadow: 0px 0px 5px rgb(236, 236, 236);
+    position: fixed;
+    z-index: 2;
+}
+
+.nav span {
+    font-size: 30px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.link {
+    margin-left: auto;
+    margin-right: 2%;
+}
+
+.active {
+    color: #0062a3;
+}
+
+.nav-link {
+    font-size: 18px !important;
+    padding: 16px;
+}
+
+@media only screen and (max-width:700px) {
+    .about {
+        display: none;
+    }
+
+    .nav span {
+        font-size: 24px;
+    }
+
+    mat-toolbar img {
+        width: 35px;
+    }
+
+    .link {
+        margin-left: auto;
+    }
+
+    .nav-link {
+        font-size: 15px !important;
+        padding: 8px;
+    }
+}
