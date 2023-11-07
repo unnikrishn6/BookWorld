@@ -11,9 +11,9 @@ BookWorld, a book e-commerce web application built using the MongoDB, ExpressJS,
 
 - Users can create account and browse books.
 - Detailed product pages with information about the title, author, price and description.
-- User Management.
 - Shopping cart for adding books and placing orders.
-- Admin dashboard for managing books and orders.
+- Admin dashboard for managing books.
+- Users can submit requests for books.
 - Responsive design with Angular Material for a seamless user experience on different devices.
 
 ## Technologies Used
