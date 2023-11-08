@@ -1,6 +1,6 @@
 # BookWorld - Book E-Commerce Website
 
-BookWorld, a book e-commerce web application built using the MongoDB, ExpressJS, Angular, NodeJS with Angular Material for the user interface.
+BookWorld, a book e-commerce web application built using the MongoDB, Express.js, Angular, Node.js with Angular Material for the user interface.
 
 ![Login](https://github.com/unnikrishn6/BookWorld/assets/111999304/25245c92-3399-4c00-9988-8e6c8c852532)
 
